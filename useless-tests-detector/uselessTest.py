@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import os
 import sys
 import glob
+from matplotlib import pyplot as plt
 
 class XMLParser:
 	def __init__(self, root, xmlDict, count):
@@ -70,6 +71,8 @@ fileNo = 0
 count = 0
 testCaseNames = {}
 
+forgraph = []
+
 old = []
 for i in range(len(z)):
 	fileNo += 1
@@ -98,8 +101,14 @@ for j in range(1, fileNo+1):
 	file.write('Current Build Number: '+str(j)+'\n')
 	file.write('Number of Builds Checked Before This: '+str(j-1)+'\n')
 	file.write('Number of Useless TestCases: '+str(len(testCaseNames)))
+	forgraph.append(len(testCaseNames))
 	file.write('\nList of Useless Testcases\n------------------------------------------------\n')
 	for k, v in testCaseNames.items():
 		file.write(k+'\n')
 
-	
+plt.plot(range(1, len(forgraph)+1), forgraph)
+plt.xlabel('Number of Builds')
+plt.ylabel('Number of useless test cases')
+plt.title('Useless Tests Detected vs Number of Builds')
+plt.savefig('./useless-test-graph.png')
+
