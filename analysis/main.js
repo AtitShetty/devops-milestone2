@@ -30,7 +30,8 @@ function main()
   		all_builders[file] = builders;
   	}
 
-  	written_output(all_builders);
+  	// written_output(all_builders);
+  	printFail(all_builders);
   	var xml_output = output_report_file(all_builders);
   	
   	fs.writeFileSync("./analysis_report.xml", xml_output.toString(), function(err) {
@@ -70,12 +71,42 @@ function ShouldWeFail(builders) {
 				console.log("More than one sync calls in ", func, "function in file = ", b);
 				return true
 			}
-			else if (s.msg_chain_length > 4){
+			else if (s.msg_chain_length > 3){
 				console.log("Big Message chain length for ", func, "function in file = ", b);
 				return true
 			}
 		}
 	}
+	return false;
+}
+
+function printFail(builders) {
+	console.log("----------------Failing Cases---------------");
+	for (var b in builders) {
+		var builder = builders[b]
+		for (var func in builder) {
+			var s = builder[func]
+			if (s.MaxNestingDepth > 3) {
+				console.log("Function - ", func, " in file - ", b, " - Big O = ", s.MaxNestingDepth);
+				// console.log("Big O for ", func, "function in file = ", b);
+			}
+			if (s.number_of_lines > 120){
+				console.log("Function - ", func, " in file - ", b, " - Number of lines = ", s.number_of_lines);
+				// console.log("Too many number of lines in ", func, "function in file = ", b);
+				// return true
+			}
+			if (s.number_of_sync_calls > 1){
+				console.log("Function - ", func, " in file - ", b, " - Number of Sync Calls = ", s.number_of_sync_calls);
+				// console.log("More than one sync calls in ", func, "function in file = ", b);
+				// return true
+			}
+			if (s.msg_chain_length > 3){
+				console.log("Function - ", func, " in file - ", b, " - Message Chain Length = ", s.msg_chain_length);
+				// console.log("Big Message chain length for ", func, "function in file = ", b);
+			}
+		}
+	}
+	console.log("--------------------------------------------");
 	return false;
 }
 

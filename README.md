@@ -58,6 +58,20 @@ For each of these files, it runs analysis on each function. It checks the four c
 The report is generated in xml format. One such report has also been generated in txt format. <br />
 Both reports are present at links: ![here](./analysis/analysis.txt) in txt format and [here](./analysis/analysis_report.xml) in xml format
 
+### Failing Cases:
+ ----------------Failing Cases---------------
+Function -  EscapeCode  in file -  ./checkbox.io/server-side/site/marqdown.js  - Message Chain Length =  8
+Function -  ProcessTokens  in file -  ./checkbox.io/server-side/site/marqdown.js  - Number of lines =  233
+Function -  ProcessTokens  in file -  ./checkbox.io/server-side/site/marqdown.js  - Message Chain Length =  4
+Function -  anon function @58  in file -  ./checkbox.io/server-side/site/routes/admin.js  - Message Chain Length =  4
+Function -  anon function @63  in file -  ./checkbox.io/server-side/site/routes/admin.js  - Message Chain Length =  4
+Function -  anon function @64  in file -  ./checkbox.io/server-side/site/routes/admin.js  - Message Chain Length =  4
+Function -  anon function @86  in file -  ./checkbox.io/server-side/site/routes/admin.js  - Message Chain Length =  4
+Function -  anon function @87  in file -  ./checkbox.io/server-side/site/routes/admin.js  - Message Chain Length =  4
+Function -  anon function @89  in file -  ./checkbox.io/server-side/site/routes/admin.js  - Message Chain Length =  4
+Function -  anon function @153  in file -  ./checkbox.io/server-side/site/routes/study.js  - Message Chain Length =  4
+ --------------------------------------------
+
 
 ## Screencasts:
 
