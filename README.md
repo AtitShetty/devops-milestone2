@@ -46,7 +46,7 @@ Total number of useless tests detected = 245.
 ### Graph
 Below is the plot of number of useless tests detected versus the number of builds:
 
-![Graph](useless-test-graph.png)
+![Graph](./useless-tests-detector/useless-test-graph.png)
 
 As we do more and more runs, number of test cases that pass in all builds reduce.
 
