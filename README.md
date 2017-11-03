@@ -43,6 +43,13 @@ The final report of useless test detector after running for 100+ commits+builds 
 
 Total number of useless tests detected = 245.
 
+### Graph
+Below is the plot of number of useless tests detected versus the number of builds:
+
+![Graph](useless-test-graph.png)
+
+As we do more and more runs, number of test cases that pass in all builds reduce.
+
 ## Analysis 
 The code is [./analysis](./analysis) folder. The script main.js is the analysis script. It takes input the directory containing the server-side code of checkbox.io. It runs analysis on each .js file recursively found in this given directory. <br />
 For each of these files, it runs analysis on each function. It checks the four criteria mentioned in Milestone 2 question. <br />

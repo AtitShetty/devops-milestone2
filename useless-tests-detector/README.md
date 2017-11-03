@@ -17,3 +17,10 @@ No special packages required
 ### Report
 Present in this folder named as `useless_test_report.txt`. <br />
 This is the final report for 100+ commits+builds <br />
+
+### Graph
+Below is the plot of number of useless tests detected versus the number of builds:
+
+![Graph](useless-test-graph.png)
+
+As we do more and more runs, number of test cases that pass in all builds reduce.
